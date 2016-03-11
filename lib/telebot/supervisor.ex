@@ -1,4 +1,5 @@
 require Logger
+
 defmodule Telebot.Supervisor do
   @moduledoc false
 

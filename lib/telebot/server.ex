@@ -1,5 +1,5 @@
 defmodule Telebot.Server do
-  @doc """
+  @moduledoc """
   Telebot.Server is a GenServer which holds the latest update offset and a
   list of Telebot.Handler behaviour for processing the fetched updates.
   """
@@ -73,6 +73,7 @@ defmodule Telebot.Server do
                    next_offset(resp, offset)
                  _ -> offset
                end
+
       state1 = %{state | update_offset: offset1}
       {:reply, state1, state1}
     else

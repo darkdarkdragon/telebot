@@ -1,4 +1,5 @@
 import Telebot.Macro
+
 defmodule Telebot.Handler do
   use Behaviour
   defcallback process(message :: Map.t)
