@@ -2,11 +2,9 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-# A dummy key registered for running test
-config :telebot, :api_key,
-"126467806:AAGTWOjd3ZVqGzLadePtbwMRwMAPbdnDz1s"
+config :telebot, api_key: System.get_env("TELEGRAM_BOT_TOKEN")
 
 config :telebot, :handlers,
 [
-  Echo,
+  # Echo,
 ]
