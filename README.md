@@ -51,7 +51,7 @@ The key can be obtained by sending message to [BotFather](https://telegram.me/Bo
 
 After obtaining your key, add the following lines to config.exs:
 ```elixir
-config :telebot, :api_key,
+config :telebot, :telegram_bot_token,
 "Your API Key Right Here"
 ```
 

@@ -318,11 +318,11 @@ defmodule Telebot.Api do
   end
 
   defp process_url(url) do
-    @endpoint <> Application.get_env(:telebot, :api_key) <> "/" <> url
+    @endpoint <> Application.get_env(:telebot, :telegram_bot_token) <> "/" <> url
   end
 
   defp process_status_code(403) do
-    raise "Invalid api_key. Please make sure you vaild telegram bot key at :telebot, :api_key in config.exs"
+    raise "Invalid telegram_bot_token. Please make sure you vaild telegram bot key at :telebot, :telegram_bot_token in config.exs"
   end
 
   defp process_status_code(s), do: s

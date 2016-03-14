@@ -9,11 +9,11 @@ defmodule Telebot.Supervisor do
 
   def init(:ok) do
     import Supervisor.Spec
-    api_key = Application.get_env(:telebot, :api_key)
+    telegram_bot_token = Application.get_env(:telebot, :telegram_bot_token)
     handlers = Application.get_env(:telebot, :handlers)
 
     cond do
-      is_nil api_key -> raise "Invalid api_key. Please define :telebot, :api_key in config.exs"
+      is_nil telegram_bot_token -> raise "Invalid telegram_bot_token. Please define :telebot, :telegram_bot_token in config.exs"
       is_nil handlers ->
         handlers = []
         Logger.warn "No handler found for telebot. Make sure you have added handlers for telebot events."
