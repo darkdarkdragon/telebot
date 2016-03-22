@@ -3,6 +3,7 @@ import Telebot.Macro
 defmodule Telebot.Handler do
   use Behaviour
   defcallback process(message :: Map.t)
+  defcallback help()
 
   # gen_callback macro will define a callback in the following form:
   # defcallback callback_name(chat :: Map.t, obj :: Map.t)
