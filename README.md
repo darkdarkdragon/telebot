@@ -3,7 +3,7 @@ Telebot
 
 Telegram bot plugin system written in Elixir.
 
-This code is a fork of [https://github.com/ottolin/telebot], I did some changes and additions.
+This code is a fork of [https://github.com/ottolin/telebot](https://github.com/ottolin/telebot), I did some changes and additions.
 
 ## Install
 
