@@ -1,6 +1,5 @@
 Telebot
 =======
-[![Build Status](https://travis-ci.org/apeacox/telebot.svg?branch=master)](https://travis-ci.org/apeacox/telebot)
 
 Telegram bot plugin system written in Elixir.
 
