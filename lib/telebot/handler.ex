@@ -1,12 +1,11 @@
 import Telebot.Macro
 
 defmodule Telebot.Handler do
-  use Behaviour
-  defcallback process(message :: Map.t)
-  defcallback help()
+  @callback process(message :: Map.t) :: any
+  @callback help() :: String.t
 
   # gen_callback macro will define a callback in the following form:
-  # defcallback callback_name(chat :: Map.t, obj :: Map.t)
+  # @callback callback_name(chat :: Map.t, obj :: Map.t)
   gen_callback :text
   gen_callback :audio
   gen_callback :document

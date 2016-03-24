@@ -1,7 +1,7 @@
 defmodule Telebot.Macro do
   defmacro gen_callback(name) do
     quote do
-      defcallback unquote(name)(from :: Map.t, chat :: Map.t, obj :: Mat.t)
+      @callback unquote(name)(from :: Map.t, chat :: Map.t, obj :: Mat.t) :: any
     end
   end
 
