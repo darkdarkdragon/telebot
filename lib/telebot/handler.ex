@@ -1,3 +1,4 @@
+require Logger
 import Telebot.Macro
 
 defmodule Telebot.Handler do
@@ -53,7 +54,7 @@ defmodule Telebot.Handler.Base do
         |> Enum.each(
           fn obj ->
             if m.message[obj] != nil do
-              apply(__MODULE__, obj, [m.message.from, m.message.chat, m.message[obj]])
+              apply(__MODULE__, obj, [m.message.from, m.message.chat, m.message[obj], m.message.message_id])
             end
           end
         )

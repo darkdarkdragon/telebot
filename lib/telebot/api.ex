@@ -1,3 +1,4 @@
+require Logger
 require Telebot.Macro
 
 defmodule Telebot.Api do
@@ -27,13 +28,12 @@ defmodule Telebot.Api do
   Info: https://core.telegram.org/bots/api#sendmessage
   """
   def send_message(chat_id, text, disable_web_page_preview \\ false, reply_to_message_id \\ nil, reply_markup \\ nil)  do
-    execute("sendMessage", {:form, [
-      chat_id: chat_id,
-      text: text,
-      disable_web_page_preview: disable_web_page_preview,
-      reply_to_message_id: reply_to_message_id,
-      reply_markup: reply_markup |> Poison.encode!
-    ]})
+    params = [chat_id: chat_id, text: text,
+                     disable_web_page_preview: disable_web_page_preview,
+                     reply_to_message_id: reply_to_message_id,
+                     reply_markup: if reply_markup do reply_markup |> Poison.encode! end]
+    params = for {k, v} <- params, v, do: {k, v}
+    execute("sendMessage", {:form, params})
   end
 
   @doc """
